@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controller;
+
+use Illuminate\Http\Request;
+
+use DB;
+
+use App\Post;
+
+class PostsController extends Controller
+{
+    public function show($slug)
+    {
+    	$post = Post::where('slug', $slug)->firstOrFail();
+    	
+		return view('post', [
+			'post' => $post
+		]);
+	}
+
+}
