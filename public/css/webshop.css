@@ -1,5 +1,4 @@
 .product {
-	margin: 10px;
 	width: 225px;
 	height: 300px;
 	display: inline-block;
@@ -9,8 +8,13 @@
 
 }
 
+.noListStyle {
+	list-style-type: none;
+}
+
 #navbar {
 	background-color: green;
+	margin-top: 0px;
 }
 
 #backgroundGray {
@@ -21,4 +25,9 @@
 #productImage {
 	width: 225px;
 	height: 225px;
+}
+
+#shoppingCart {
+	float: right;
+	margin-right: 7%;
 }

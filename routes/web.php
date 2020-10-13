@@ -47,22 +47,9 @@ Route::get('/homepage/noFilter', 'CategoriesController@showAll');
 
 Route::get('/category/{categoryId}', 'CategoriesController@filter');
 
-Route::get('products/{productId}', 'ProductController@show');
+Route::get('/products/{productId}', 'ProductController@show');
 
-/*Route::get('/posts/{post}', function ($post) {
-	$posts = [
-		'my-first-post' => 'hello, this is my first post',
-		'my-second-post' => 'two posts already? wow!'
-	];
-
-	if (! array_key_exists($post, $posts)) {
-		abort(404, 'sorry, that post does not exist');
-	}
-
-	return view('post', [
-		'post' => $posts[$post]
-	]);
-});*/
+Route::post('/../{productId}', 'CartController@store');
 
 Route::get('/posts/{post}', 'PostsController@show');
 
