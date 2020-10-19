@@ -33,15 +33,7 @@ Route::get('/test', function () {
     return view('test');
 });
 
-Route::get('/', function () {
-	$categories = App\Category::all();
-	$products = App\Product::all();
-
-    return view('homepage', [
-    	'categories' => $categories,
-    	'products' =>$products
-    ]);
-});
+Route::get('/', 'ProductController@index');
 
 Route::get('/homepage/noFilter', 'CategoriesController@showAll');
 
@@ -49,7 +41,11 @@ Route::get('/category/{categoryId}', 'CategoriesController@filter');
 
 Route::get('/products/{productId}', 'ProductController@show');
 
-Route::post('/../{productId}', 'CartController@store');
+Route::get('/cart/storeFromHomepage/{productId}', 'CartController@storeFromHomepage');
+
+Route::post('/cart/storeFromCategory/{productId}', 'CartController@storeFromCategory');
+
+Route::post('/cart/storeFromProduct/{productId}', 'CartController@storeFromProduct');
 
 Route::get('/posts/{post}', 'PostsController@show');
 

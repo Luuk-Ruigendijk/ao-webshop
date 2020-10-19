@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Product;
 
+use App\Category;
+
 class ProductController extends Controller
 {
     /**
@@ -15,7 +17,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        $products = Product::all();
+
+        return view('homepage', [
+            'categories' => $categories,
+            'products' =>$products
+        ]);
     }
 
     /**

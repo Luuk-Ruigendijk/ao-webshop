@@ -32,10 +32,36 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeFromHomepage($id, Request $request)
     {
-        Session::push($request, 'cart');
+        $amount = $request->input('amount');
+        //dd($id, $amount);
+
+
+        //$cart = new Cart();
+        //$cart->addItem($id, $amount);
+        header('/');
     }
+
+
+    //$items = [];
+
+// items declaren als array
+    //constructie:
+    //als de sessie al items bevat dan haal die items op en zet ze in de items array
+    
+    //private methodes:
+    //saveSession
+
+    //publieke methodes:
+    //addItem; productId en Amount meegeven
+        //process items array (if item exists, only add amount to the old amount)
+    //GetAllItems; niks meegeven
+    //changeItemAmount; ProductId en amount-change meegeven
+    //removeItem; productId meegeven
+    //dropCart; niks meegeven
+    //
+
 
     /**
      * Display the specified resource.

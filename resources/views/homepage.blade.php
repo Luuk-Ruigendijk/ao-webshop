@@ -14,7 +14,7 @@
             <img src="{{ $product->picture }}.jpg">
             <a class="productList" href="/products/{{ $product->id }}">{{ $product->productName }}</a>
             <p>{{ $product->price }}</p>
-            <form method="post" action="/../{{ $product->id }}">
+            <form method="get" action="/cart/storeFromHomepage/{{ $product->id }}">
                 <input type="number" name="amount" value="1">
                 <button type="submit">Add to cart</button>
             </form>
