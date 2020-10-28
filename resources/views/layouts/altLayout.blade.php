@@ -24,8 +24,10 @@
 		    		@endforeach
 		    	</ul>
 	    	</li>
-	    	<li class="w3-button navItem">da<a href="/">Homepage</a></li>
-	    	<li class="w3-dropdown-hover navItem" id="shoppingCart">
+	    	<li class="inline w3-dropdown-hover navItem grayBackground">
+	    		da<a href="/">Homepage</a>
+	    	</li>
+	    	<li class="w3-dropdown-hover navItem grayBackground" id="shoppingCart">
 		    	<span class="w3-button">Shopping Cart</span>
 		    	<ul class="w3-dropdown-content w3-bar-block w3-border noListStyle">
 		    		@foreach ($categories as $categorie)

@@ -6,6 +6,13 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
+    /*
+    creates the cart class
+    */
+    public function __construct()
+    {
+        
+    }
     /**
      * Display a listing of the resource.
      *
@@ -36,11 +43,15 @@ class CartController extends Controller
     {
         $amount = $request->input('amount');
         //dd($id, $amount);
-
-
         //$cart = new Cart();
         //$cart->addItem($id, $amount);
-        header('/');
+        //header('/');
+        $categories = Category::all();
+        $products = Product::all();
+        return view('homepage', [
+            'categories' => $categories,
+            'products' =>$products
+        ]);
     }
 
 

@@ -8,18 +8,25 @@
     <form>
         First name: <input type="text" onkeyup="showHint(this.value)">
     </form>
-    <div class="row">
-        @foreach ($products as $product)
-        <div class="product col-md-3 col-sd-6">
-            <img src="{{ $product->picture }}.jpg">
-            <a class="productList" href="/products/{{ $product->id }}">{{ $product->productName }}</a>
-            <p>{{ $product->price }}</p>
-            <form method="get" action="/cart/storeFromHomepage/{{ $product->id }}">
-                <input type="number" name="amount" value="1">
-                <button type="submit">Add to cart</button>
-            </form>
+    <div class="rowContainer">
+        <div class="row">
+            @foreach ($products as $product)
+            <div class="productContainer col-md-3 col-sd-6">
+                <div class="product">
+                    <img src="{{ $product->picture }}.jpg">
+                    <a class="productList" href="/products/{{ $product->id }}">
+                        {{ $product->productName }}
+                    </a>
+                    <p>{{ $product->price }}</p>
+                    <form method="get" action="/cart/storeFromHomepage/{{ $product->id }}">
+                        <input type="number" name="amount" value="1">
+                        <button type="submit">Add to cart</button>
+                    </form>
+                </div>
+            </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
+    
     
 @endsection
