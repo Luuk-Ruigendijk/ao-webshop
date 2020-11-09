@@ -1,5 +1,6 @@
 <?php 
 	use App\Category;
+	use Illuminate\Http\Request;
 	$categories = Category::all(); 
 ?>
 

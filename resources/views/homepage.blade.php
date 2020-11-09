@@ -1,6 +1,7 @@
 @extends ('layouts.altLayout')
 
 @section ('content')
+<?php $data = $request->session()->all(); ?>
     <p><b>Start typing a name in the input field below:</b></p>
 
     <p>Suggestions: <span id="txtHint"></span></p>
@@ -8,6 +9,7 @@
     <form>
         First name: <input type="text" onkeyup="showHint(this.value)">
     </form>
+    <h1><?php echo($data); ?></h1>
     <div class="rowContainer">
         <div class="row">
             @foreach ($products as $product)

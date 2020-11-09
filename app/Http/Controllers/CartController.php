@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
+
 use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    /*
-    creates the cart class
-    */
-    public function __construct()
-    {
-        
-    }
     /**
      * Display a listing of the resource.
      *
@@ -42,16 +37,11 @@ class CartController extends Controller
     public function storeFromHomepage($id, Request $request)
     {
         $amount = $request->input('amount');
-        //dd($id, $amount);
+        //dd($_SERVER);
+        session([$id => $amount]);
         //$cart = new Cart();
         //$cart->addItem($id, $amount);
-        //header('/');
-        $categories = Category::all();
-        $products = Product::all();
-        return view('homepage', [
-            'categories' => $categories,
-            'products' =>$products
-        ]);
+        return back();
     }
 
 
