@@ -1,6 +1,10 @@
 @extends ('layouts.altLayout')
 
 @section ('content')
+
+//make data optional. add javascript if statement for cart. only show if something other than the optional variable is shown
+
+
 <?php $data = $request->session()->all(); ?>
     <p><b>Start typing a name in the input field below:</b></p>
 
@@ -20,7 +24,7 @@
                         {{ $product->productName }}
                     </a>
                     <p>{{ $product->price }}</p>
-                    <form method="get" action="/cart/storeFromHomepage/{{ $product->id }}">
+                    <form method="get" action="/cart/store/{{ $product->id }}">
                         <input type="number" name="amount" value="1">
                         <button type="submit">Add to cart</button>
                     </form>

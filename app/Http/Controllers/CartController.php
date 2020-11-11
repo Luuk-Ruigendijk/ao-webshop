@@ -34,7 +34,7 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function storeFromHomepage($id, Request $request)
+    public function store($id, Request $request)
     {
         $amount = $request->input('amount');
         //dd($_SERVER);
@@ -42,6 +42,11 @@ class CartController extends Controller
         //$cart = new Cart();
         //$cart->addItem($id, $amount);
         return back();
+    }
+
+    public function retrieveData(Request $request)
+    {
+        $data = $request->session()->all();
     }
 
 

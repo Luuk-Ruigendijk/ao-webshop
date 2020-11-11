@@ -41,11 +41,11 @@ Route::get('/category/{categoryId}', 'CategoriesController@filter');
 
 Route::get('/products/{productId}', 'ProductController@show');
 
-Route::get('/cart/storeFromHomepage/{productId}', 'CartController@storeFromHomepage');
+Route::get('/cart/store/{productId}', 'CartController@store');
 
-Route::post('/cart/storeFromCategory/{productId}', 'CartController@storeFromCategory');
+Route::post('/cart/store/{productId}', 'CartController@store');
 
-Route::post('/cart/storeFromProduct/{productId}', 'CartController@storeFromProduct');
+Route::post('/cart/store/{productId}', 'CartController@store');
 
 Route::get('/posts/{post}', 'PostsController@show');
 
