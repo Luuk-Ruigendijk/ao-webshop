@@ -25,8 +25,8 @@
 		    		@endforeach
 		    	</ul>
 	    	</li>
-	    	<li class="inline w3-dropdown-hover navItem grayBackground">
-	    		da<a href="/">Homepage</a>
+	    	<li class="w3-dropdown-hover navItem grayBackground">
+	    		<p href="/">Homepage</p>
 	    	</li>
 	    	<li class="w3-dropdown-hover navItem grayBackground" id="shoppingCart">
 		    	<span class="w3-button">Shopping Cart</span>

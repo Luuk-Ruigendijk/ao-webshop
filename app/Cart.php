@@ -9,12 +9,12 @@ class Cart extends Model
     /*
     creates the cart class
     */
-    public function __construct()
+    public function __construct($productWithAmount)
     {
-        $product=[];
+        $cart[]=$productWithAmount;
     }
 
-    private function saveSession()
+    private function saveSession($oldCart)
     {
     	
     }
