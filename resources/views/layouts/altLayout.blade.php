@@ -1,7 +1,14 @@
 <?php 
 	use App\Category;
 	use Illuminate\Http\Request;
-	$categories = Category::all(); 
+	$categories = Category::all();
+	$cartExists = false;
+	session_start();
+	if (isset($_SESSION["cart"])) {
+    	$cartItems = $_SESSION["cart"];
+    	$cartExists = true;
+	}
+	//$cartItems = ["l", "o", "l"];
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +16,6 @@
 	<head>
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
 		<title>ao-webshop</title>
 		<link href="{{ asset('css/webshop.css') }}" rel="stylesheet">
 		<link href="{{ asset('css/w3.css') }}" rel="stylesheet">
@@ -31,9 +37,15 @@
 	    	<li class="w3-dropdown-hover navItem grayBackground" id="shoppingCart">
 		    	<span class="w3-button">Shopping Cart</span>
 		    	<ul class="w3-dropdown-content w3-bar-block w3-border noListStyle">
-		    		@foreach ($categories as $categorie)
-		    		<li><a href="/category/{{ $categorie->id }}" class="w3-bar-item w3-button">{{ $categorie->category }}</a></li>
-		    		@endforeach
+		    		<?php 
+		    		if ($cartExists==true) { ?>
+		    		@foreach ($cartItems as $cartItem)
+		    		<li><a class="w3-bar-item w3-button">{{ $cartItem->id }}</a></li>
+		    		@endforeach 
+		    		<?php
+		    			//dd($cartItems);
+		    		}
+		    		 ?>
 		    	</ul>
 	    	</li>
 	    </ul>	

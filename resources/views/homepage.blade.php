@@ -24,7 +24,8 @@
                         {{ $product->productName }}
                     </a>
                     <p>{{ $product->price }}</p>
-                    <form method="get" action="/cart/store/{{ $product->id }}">
+                    <form method="post" action="{{'/cart/store/' . $product->id }}">
+                        @csrf
                         <input type="number" name="amount" value="1">
                         <button type="submit">Add to cart</button>
                     </form>

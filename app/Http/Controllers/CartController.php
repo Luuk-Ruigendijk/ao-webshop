@@ -37,10 +37,17 @@ class CartController extends Controller
     public function store($id, Request $request)
     {
         $amount = $request->input('amount');
-        //dd($_SERVER);
-        session([$id => $amount]);
-        //$cart = new Cart();
-        //$cart->addItem($id, $amount);
+        session_start();
+        if (isset($_SESSION["cart"])) {
+            $cart = $_SESSION["cart"];
+        }
+        else {
+            $cart = [];
+        }
+
+        $cart[] = ['id' => $id, 'amount'=> $amount];
+        $_SESSION["cart"] = $cart;
+        //dd($cart);
         return back();
     }
 
