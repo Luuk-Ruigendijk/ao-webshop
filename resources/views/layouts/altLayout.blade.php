@@ -40,7 +40,7 @@
 		    		<?php 
 		    		if ($cartExists==true) { ?>
 		    		@foreach ($cartItems as $cartItem)
-		    		<li><a class="w3-bar-item w3-button">{{ $cartItem->id }}</a></li>
+					<li><a class="w3-bar-item w3-button"><?php $cartItem ?></a></li>
 		    		@endforeach 
 		    		<?php
 		    			//dd($cartItems);

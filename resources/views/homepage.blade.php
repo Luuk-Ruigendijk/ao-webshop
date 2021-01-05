@@ -5,7 +5,16 @@
 //make data optional. add javascript if statement for cart. only show if something other than the optional variable is shown
 
 
-<?php //$data = $request->session()->all(); ?>
+<?php //$data = $request->session()->all();
+     
+    if (isset($_SESSION["cart"])) {
+        $cartItems = $_SESSION["cart"];
+        $cartExists = true;
+    }
+    else {
+        $cartItems = [];
+    }
+?>
     <p><b>Start typing a name in the input field below:</b></p>
 
     <p>Suggestions: <span id="txtHint"></span></p>

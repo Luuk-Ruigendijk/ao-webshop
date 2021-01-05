@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {
+    public $id;
+    public $amount;
     /*
     creates the cart class
     */
-    public function __construct($productWithAmount)
+    public function __construct($product, $amount)
     {
-        $cart[]=$productWithAmount;
+        $cart=[];
     }
 
     private function saveSession($oldCart)
@@ -21,7 +23,7 @@ class Cart extends Model
 
     public function addItem($productId, $amount)
     {
-
+        $cart[]=[$product, $amount];
     }
 
     public function GetAllItems()

@@ -46,7 +46,8 @@ class CartController extends Controller
         }
         $cart[]= ['id' => $id, 'amount'=> $amount];
         $_SESSION["cart"] = $cart;
-        
+        //dd($cart);
+
         return back();
     }
 
