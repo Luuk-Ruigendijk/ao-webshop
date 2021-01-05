@@ -3,7 +3,7 @@
 	use Illuminate\Http\Request;
 	$categories = Category::all();
 	$cartExists = false;
-	session_start();
+	// session_start();
 	if (isset($_SESSION["cart"])) {
     	$cartItems = $_SESSION["cart"];
     	$cartExists = true;
@@ -40,7 +40,7 @@
 		    		<?php 
 		    		if ($cartExists==true) { ?>
 		    		@foreach ($cartItems as $cartItem)
-					<li><a class="w3-bar-item w3-button"><?php $cartItem ?></a></li>
+					<li><a class="w3-bar-item w3-button">{{ $cartItem[1] }}</a></li>
 		    		@endforeach 
 		    		<?php
 		    			//dd($cartItems);

@@ -2,28 +2,40 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Product;
 
-class Cart extends Model
+class Cart
 {
-    public $id;
-    public $amount;
+    private $items;
     /*
     creates the cart class
     */
-    public function __construct($product, $amount)
+    public function __construct($productId, $amount)
     {
-        $cart=[];
+        if (isset($_SESSION["cart"])) {
+            //cart bestaat al in sessie. haal op.
+            $this->items = $_SESSION['cart'];
+        } else {
+           // maak lege cart en voeg toe aan sessie
+            $this->items = [];
+            $this->saveSession(); 
+        }
+
+        $this->addItem($productId, $amount);
+    
     }
 
-    private function saveSession($oldCart)
+    private function saveSession()
     {
-    	
+    	$_SESSION['cart'] = $this->items;
     }
 
     public function addItem($productId, $amount)
     {
-        $cart[]=[$product, $amount];
+        $product = Product::where('id', $productId)->first();
+        $product_name = $product->productName;
+        $this->items[]=[$productId, $product_name, $amount];
+        $this->saveSession();
     }
 
     public function GetAllItems()
