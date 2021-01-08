@@ -8,7 +8,9 @@
     	$cartItems = $_SESSION["cart"];
     	$cartExists = true;
 	}
-	//$cartItems = ["l", "o", "l"];
+	else {
+		$cartItems = [];
+	}
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +42,7 @@
 		    		<?php 
 		    		if ($cartExists==true) { ?>
 		    		@foreach ($cartItems as $cartItem)
-					<li><a class="w3-bar-item w3-button">{{ $cartItem[1] }}</a></li>
+					<li><a class="w3-bar-item w3-button">{{ $cartItem[1] }}</a><p>{{ $cartItem[2] }}</p><p>{{ $cartItem[3] * $cartItem[2] }}</p></li>
 		    		@endforeach 
 		    		<?php
 		    			//dd($cartItems);

@@ -34,7 +34,13 @@ class Cart
     {
         $product = Product::where('id', $productId)->first();
         $product_name = $product->productName;
-        $this->items[]=[$productId, $product_name, $amount];
+        $product_price = $product->price;
+        foreach ($_SESSION['cart'] as $cartItem) {
+            if ($cartItem[0]==$productId) {
+                $amount = $amount + $cartItem[2];
+            }
+        }
+        $this->items[]=[$productId, $product_name, $amount, $product_price];
         $this->saveSession();
     }
 
