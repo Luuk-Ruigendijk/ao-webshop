@@ -34,7 +34,7 @@
 		    	</ul>
 	    	</li>
 	    	<li class="w3-dropdown-hover navItem grayBackground">
-	    		<p href="/">Homepage</p>
+	    		<a href="/">Homepage</a>
 	    	</li>
 	    	<li class="w3-dropdown-hover navItem grayBackground" id="shoppingCart">
 		    	<span class="w3-button">Shopping Cart</span>
@@ -42,12 +42,14 @@
 		    		<?php 
 		    		if ($cartExists==true) { ?>
 		    		@foreach ($cartItems as $cartItem)
-					<li><a class="w3-bar-item w3-button">{{ $cartItem[1] }}</a><p>{{ $cartItem[2] }}</p><p>{{ $cartItem[3] * $cartItem[2] }}</p></li>
+					<li><a class="w3-bar-item w3-button">{{ $cartItem[1] }}</a><p>{{ $cartItem[2] }}</p><p>{{ $cartItem[3] * $cartItem[2] }}</p><a href="/cart/removeItem/{{ $cartItem[0] }}">remove</a></li>
 		    		@endforeach 
-		    		<?php
-		    			//dd($cartItems);
+					<?php
 		    		}
-		    		 ?>
+		    		else {
+		    			?><p>yolo</p><?php
+		    		}
+		    		?>
 		    	</ul>
 	    	</li>
 	    </ul>	

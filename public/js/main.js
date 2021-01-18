@@ -15,14 +15,3 @@ function showHint(str) {
     xmlhttp.send();
   }
 }
-
-function addToCart(productId) {
-	var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function(productId) {
-    	if (this.readyState == 4 && this.status == 200) {
-        	
-    	}
-    };
-    xmlhttp.open("GET", "../php/test.php", true);
-    xmlhttp.send();
-}

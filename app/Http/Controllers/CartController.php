@@ -57,6 +57,12 @@ class CartController extends Controller
         $data = $request->session()->all();
     }
 
+    public function deleteItem($id){
+        $cart = new Cart();
+        $cart->removeItem($id);
+        return redirect()->back();
+    }
+
 
     //$items = [];
 
