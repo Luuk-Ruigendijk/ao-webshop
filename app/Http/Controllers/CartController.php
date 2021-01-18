@@ -47,7 +47,8 @@ class CartController extends Controller
         // $cart[]= ['id' => $id, 'amount'=> $amount];
         // $_SESSION["cart"] = $cart;
 
-        $cart = new Cart($id, $amount);
+        $cart = new Cart();
+        $cart->addItem($id, $amount);
         
         return back();
     }
