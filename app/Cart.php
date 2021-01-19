@@ -38,6 +38,7 @@ class Cart
         foreach ($_SESSION['cart'] as $cartItem) {
             if ($cartItem[0]==$productId) {
                 $amount = $amount + $cartItem[2];
+                $this->removeItem($productId);
             }
         }
         $this->items[]=[$productId, $product_name, $amount, $product_price];
@@ -64,6 +65,7 @@ class Cart
                 // $amount = $amount + $cartItem[2];
                 unset($fullCart[$counter]);
                 $_SESSION['cart'] = $fullCart;
+                break;
             }
             $counter++;
         }
