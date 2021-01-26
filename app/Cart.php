@@ -58,13 +58,14 @@ class Cart
     public function removeItem($productId)
     {
         $counter = 0;
-        $fullCart = $_SESSION['cart'];
+        //$fullCart = $_SESSION['cart'];
         $product = Product::where('id', $productId)->first();
         foreach ($_SESSION['cart'] as $cartItem) {
             if ($cartItem[0]==$productId) {
                 // $amount = $amount + $cartItem[2];
-                unset($fullCart[$counter]);
-                $_SESSION['cart'] = $fullCart;
+                //unset($this->items[$counter]);
+                array_splice($this->items, $counter, 1);
+                //$_SESSION['cart'] = $fullCart;
                 break;
             }
             $counter++;

@@ -36,7 +36,7 @@ class CartController extends Controller
      */
     public function store($id, Request $request)
     {
-         $amount = $request->input('amount');
+        $amount = $request->input('amount');
         // session_start();
         // if (isset($_SESSION["cart"])) {
         //     $cart = $_SESSION["cart"];
@@ -46,7 +46,6 @@ class CartController extends Controller
         // }
         // $cart[]= ['id' => $id, 'amount'=> $amount];
         // $_SESSION["cart"] = $cart;
-
         $cart = new Cart();
         $cart->addItem($id, $amount);
         
