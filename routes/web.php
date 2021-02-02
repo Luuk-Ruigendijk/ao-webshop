@@ -43,7 +43,7 @@ Route::get('/products/{productId}', 'ProductController@show');
 
 Route::post('/cart/store/{productId}', 'CartController@store');
 
-Route::post('/cart/removeItem/{productId}', 'CartController@deleteItem');
+Route::get('/cart/removeItem/{productId}', 'CartController@deleteItem');
 
 Route::get('/posts/{post}', 'PostsController@show');
 

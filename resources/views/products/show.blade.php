@@ -5,5 +5,9 @@
 	<h1>{{ $product->productName }}</h1>
 	<p>{{ $product->description }}</p>
 	<p>{{ $product->price }}</p>
-	<a class="addToCartButton" href="#">Add to cart</a>
+	<form method="post" action="{{'/cart/store/' . $product->id }}">
+    	@csrf
+    	<input type="number" name="amount" value="1">
+    	<button type="submit">Add to cart</button>
+    </form>
 @endsection

@@ -42,7 +42,9 @@
 		    		<?php 
 		    		if ($cartExists==true) { ?>
 		    		@foreach ($cartItems as $cartItem)
-					<li><a class="w3-bar-item w3-button">{{ $cartItem[1] }}</a><p>{{ $cartItem[2] }}</p><p>{{ $cartItem[3] * $cartItem[2] }}</p><a href="/cart/removeItem/{{ $cartItem[0] }}">remove</a></li>
+					<li><a class="w3-bar-item w3-button" href="/products/{{ $cartItem[0] }}">
+                        {{ $cartItem[1] }}
+                    </a><p>{{ $cartItem[2] }}</p><p>{{ $cartItem[3] * $cartItem[2] }}</p><a href="/cart/removeItem/{{ $cartItem[0] }}">remove</a></li>
 		    		@endforeach 
 					<?php
 		    		}
