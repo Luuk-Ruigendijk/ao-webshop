@@ -6,6 +6,7 @@
 
 
 <?php //$data = $request->session()->all();
+use Illuminate\Support\Facades\Auth;
      
     if (isset($_SESSION["cart"])) {
         $cartItems = $_SESSION["cart"];
@@ -23,6 +24,16 @@
         First name: <input type="text" onkeyup="showHint(this.value)">
     </form>
     <h1><?php// echo($data); ?></h1>
+
+<?php 
+    if (Auth::check()) {
+        ?><h1>You are logged in, I think...</h1><?php
+    } 
+    else {
+        ?><h1>You aren't logged in, I think...</h1><?php
+    }
+?>
+
     <div class="rowContainer">
         <div class="row">
             @foreach ($products as $product)

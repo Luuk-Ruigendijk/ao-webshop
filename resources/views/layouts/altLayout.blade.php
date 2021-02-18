@@ -46,6 +46,7 @@
                         {{ $cartItem[1] }}
                     </a><p>{{ $cartItem[2] }}</p><p>{{ $cartItem[3] * $cartItem[2] }}</p><a href="/cart/removeItem/{{ $cartItem[0] }}">remove</a></li>
 		    		@endforeach 
+		    		<button>Go to checkout</button>
 					<?php
 		    		}
 		    		else {
