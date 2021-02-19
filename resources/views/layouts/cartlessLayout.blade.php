@@ -39,25 +39,6 @@
 	    	<li class="w3-dropdown-hover navItem grayBackground">
 	    		<a href="/home">Login/Logout/Register</a>
 	    	</li>
-	    	<li class="w3-dropdown-hover navItem grayBackground" id="shoppingCart">
-		    	<span class="w3-button">Shopping Cart</span>
-		    	<ul class="w3-dropdown-content w3-bar-block w3-border noListStyle">
-		    		<?php 
-		    		if ($cartExists==true) { ?>
-		    		@foreach ($cartItems as $cartItem)
-					<li><a class="w3-bar-item w3-button" href="/products/{{ $cartItem[0] }}">
-                        {{ $cartItem[1] }}
-                    </a><p>{{ $cartItem[2] }}</p><p>{{ $cartItem[3] * $cartItem[2] }}</p><a href="/cart/removeItem/{{ $cartItem[0] }}">remove</a></li>
-		    		@endforeach 
-		    		<a href="/cart">Go to checkout</a>
-					<?php
-		    		}
-		    		else {
-		    			?><p>yolo</p><?php
-		    		}
-		    		?>
-		    	</ul>
-	    	</li>
 	    </ul>	
 		@yield ('content')
 		<script src="{{ asset('js/main.js') }}" type="text/javascript"></script>

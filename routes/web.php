@@ -45,6 +45,10 @@ Route::post('/cart/store/{productId}', 'CartController@store');
 
 Route::get('/cart/removeItem/{productId}', 'CartController@deleteItem');
 
+Route::get('/cart', function () {
+    return view('cart');
+});
+
 Route::get('/posts/{post}', 'PostsController@show');
 
 Auth::routes();
