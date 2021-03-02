@@ -15,3 +15,7 @@ function showHint(str) {
     xmlhttp.send();
   }
 }
+
+function updateCartAmount(){
+  console.log("yoooooo");
+}

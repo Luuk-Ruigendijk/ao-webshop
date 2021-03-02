@@ -51,9 +51,4 @@ use Illuminate\Support\Facades\Auth;
         ?>
     </div>
 </div>
-    <script type="text/javascript">
-        function updateCartAmount(){
-            console.log("yoooooo");
-        }
-    </script>
 @endsection
