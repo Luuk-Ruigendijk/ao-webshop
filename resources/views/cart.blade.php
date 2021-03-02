@@ -35,7 +35,10 @@ use Illuminate\Support\Facades\Auth;
                 <div style="border-style: solid; margin: 5px; text-align: center; width: 100%;">
                    <div><a class="w3-bar-item w3-button" href="/products/{{ $cartItem[0] }}"> {{ $cartItem[1] }}</a>
                     <p>{{ $cartItem[2] }}</p>
-                    <input type="number" name="number" value="{{ $cartItem[2] }}">
+                    <div>
+                        <input type="number" name="amount" value="{{ $cartItem[2] }}">
+                        <input type="button" name="accept" value="Set new amount" onclick="updateCartAmount()">
+                    </div>
                     <p>{{ $cartItem[3] * $cartItem[2] }}</p>
                     <a href="/cart/removeItem/{{ $cartItem[0] }}">remove</a></div> 
                 </div>
@@ -48,5 +51,9 @@ use Illuminate\Support\Facades\Auth;
         ?>
     </div>
 </div>
-    
+    <script type="text/javascript">
+        function updateCartAmount(){
+            console.log("yoooooo");
+        }
+    </script>
 @endsection
