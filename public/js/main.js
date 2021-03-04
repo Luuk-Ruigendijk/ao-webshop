@@ -19,3 +19,4 @@ function showHint(str) {
 function updateCartAmount(){
   console.log("yoooooo");
 }
+

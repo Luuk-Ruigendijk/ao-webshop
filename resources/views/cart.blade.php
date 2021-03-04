@@ -43,10 +43,16 @@ use Illuminate\Support\Facades\Auth;
                     <a href="/cart/removeItem/{{ $cartItem[0] }}">remove</a></div> 
                 </div>
             @endforeach 
-        <button>Go to checkout</button>         
-        <?php }
-        else {
-            ?><p>yolo</p><?php
+        <?php
+        if (Auth::check()) {?>
+            <button id="checkoutButton">Go to checkout</button><?php
+        } 
+        else { ?>
+            <p>Please <a href="/home">log in or create an account</a> before ordering.</p><?php
+        }
+        ?>
+                 
+        <?php 
         }
         ?>
     </div>
