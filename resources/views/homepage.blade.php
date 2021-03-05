@@ -46,7 +46,7 @@ use Illuminate\Support\Facades\Auth;
                     <p>{{ $product->price }}</p>
                     <form method="post" action="{{'/cart/store/' . $product->id }}">
                         @csrf
-                        <input type="number" name="amount" value="1">
+                        <input type="number" name="amount" value="1" min="1">
                         <button type="submit">Add to cart</button>
                     </form>
                 </div>
