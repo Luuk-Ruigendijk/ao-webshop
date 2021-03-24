@@ -45,7 +45,7 @@ use Illuminate\Support\Facades\Auth;
             @endforeach 
         <?php
         if (Auth::check()) {?>
-            <button id="checkoutButton">Go to checkout</button><?php
+            <button id="checkoutButton" onclick="placeOrder()">Go to checkout</button><?php
         } 
         else { ?>
             <p>Please <a href="/home">log in or create an account</a> before ordering.</p><?php

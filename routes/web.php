@@ -49,6 +49,10 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
+Route::get('/orders', function () {
+    return view('orders');
+});
+
 Route::get('/posts/{post}', 'PostsController@show');
 
 Auth::routes();

@@ -37,8 +37,19 @@
 	    		<a href="/">Homepage</a>
 	    	</li>
 	    	<li class="w3-dropdown-hover navItem grayBackground">
-	    		<a href="/home">Login/Logout/Register</a>
+	    		<a href="/home">Account</a>
 	    	</li>
+	    	<?php
+	    	if (Auth::check()) {
+    			?><li class="w3-dropdown-hover navItem grayBackground">
+	    			<a href="/orders">Placed orders</a>
+	    		</li><?php
+			} 
+			else {
+    			?><li class="w3-dropdown-hover navItem grayBackground">
+    				<p>Log in to see orders</p>
+    			</li><?php
+			}?>
 	    	<li class="w3-dropdown-hover navItem grayBackground" id="shoppingCart">
 		    	<span class="w3-button">Shopping Cart</span>
 		    	<ul class="w3-dropdown-content w3-bar-block w3-border noListStyle">
