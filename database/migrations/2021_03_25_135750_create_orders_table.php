@@ -17,6 +17,8 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->bigInteger('userId')->unsigned();
             $table->foreign('userId')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            
+            $table->double('total');
         });
     }
 

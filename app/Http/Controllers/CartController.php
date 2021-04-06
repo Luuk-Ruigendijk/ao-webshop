@@ -63,6 +63,14 @@ class CartController extends Controller
         return redirect()->back();
     }
 
+    public function alterItemAmount($id, Request $request){
+        $amount = $request->input('amount');
+        $cart = new Cart();
+        $cart->removeItem($id);
+        $cart->addItem($id, $amount);
+        return back();
+    }
+
 
     //$items = [];
 

@@ -45,6 +45,8 @@ Route::post('/cart/store/{productId}', 'CartController@store');
 
 Route::get('/cart/removeItem/{productId}', 'CartController@deleteItem');
 
+Route::get('/cart/updateItemAmount/{productId}', 'CartController@alterItemAmount');
+
 Route::get('/cart', function () {
     return view('cart');
 });
