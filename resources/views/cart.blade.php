@@ -37,7 +37,7 @@ use Illuminate\Support\Facades\Auth;
                     <p>{{ $cartItem[2] }}</p>
                     <form method="get" action="{{'/cart/updateItemAmount/' . $cartItem[0] }}">
                         @csrf
-                        <input type="number" name="amount" value="{{ $cartItem[2] }}">
+                        <input type="number" name="amount" value="{{ $cartItem[2] }}" min="0">
                         <button type="submit">Alter amount</button>
                     </form>
                     <p>{{ $cartItem[3] * $cartItem[2] }}</p>

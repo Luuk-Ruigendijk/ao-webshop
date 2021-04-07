@@ -67,7 +67,9 @@ class CartController extends Controller
         $amount = $request->input('amount');
         $cart = new Cart();
         $cart->removeItem($id);
-        $cart->addItem($id, $amount);
+        if ($amount > 0) {
+            $cart->addItem($id, $amount);
+        }
         return back();
     }
 
