@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Order;
+
 class OrderController extends Controller
 {
     /**
@@ -45,7 +47,14 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $orders = DB::table('orders')->where('userId', $id);
+        return view('orders.show', ['orders' => $orders]);
+    }
+
+    public function showAll()
+    {
+        $order = Order::find($id);
+        return view('orders.show', ['orders' => $orders]);
     }
 
     /**

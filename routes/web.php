@@ -35,8 +35,6 @@ Route::get('/test', function () {
 
 Route::get('/', 'ProductController@index');
 
-Route::get('/homepage/noFilter', 'CategoriesController@showAll');
-
 Route::get('/category/{categoryId}', 'CategoriesController@filter');
 
 Route::get('/products/{productId}', 'ProductController@show');
@@ -47,12 +45,10 @@ Route::get('/cart/removeItem/{productId}', 'CartController@deleteItem');
 
 Route::get('/cart/updateItemAmount/{productId}', 'CartController@alterItemAmount');
 
+Route::get('/orders', 'OrderController@show');
+
 Route::get('/cart', function () {
     return view('cart');
-});
-
-Route::get('/orders', function () {
-    return view('orders');
 });
 
 Route::get('/posts/{post}', 'PostsController@show');
