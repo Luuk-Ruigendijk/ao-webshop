@@ -20,9 +20,9 @@ class CreateProductsTable extends Migration
             $table->string('picture');
             $table->double('price');
             
-            $table->bigInteger('categoryId')->unsigned();
+            $table->bigInteger('category_id')->unsigned();
 
-            $table->foreign('categoryId')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

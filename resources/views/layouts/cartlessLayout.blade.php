@@ -37,7 +37,7 @@
 	    		<a href="/">Homepage</a>
 	    	</li>
 	    	<li class="w3-dropdown-hover navItem grayBackground">
-	    		<a href="/home">Login/Logout/Register</a>
+	    		<a href="/home">Account</a>
 	    	</li>
 	    </ul>	
 		@yield ('content')

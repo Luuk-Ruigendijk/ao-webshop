@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Order;
 
+use Illuminate\Support\Facades\Auth;
+
 class OrderController extends Controller
 {
     /**
@@ -25,7 +27,11 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        $order = Order::create([
+            'user_id' => Auth::user()->id,
+            'total' => 3
+        ]);
+        return view('orders', ['orders' => $orders]);
     }
 
     /**
@@ -47,14 +53,14 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $orders = DB::table('orders')->where('userId', $id);
-        return view('orders.show', ['orders' => $orders]);
+
     }
 
     public function showAll()
     {
-        $order = Order::find($id);
-        return view('orders.show', ['orders' => $orders]);
+        $user = Auth::user();
+        $orders = $user->orders;
+        return view('orders', ['orders' => $orders]);
     }
 
     /**

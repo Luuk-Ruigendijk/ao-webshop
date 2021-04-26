@@ -2,9 +2,6 @@
 
 @section ('content')
 
-//make data optional. add javascript if statement for cart. only show if something other than the optional variable is shown
-
-
 <?php //$data = $request->session()->all();
 use Illuminate\Support\Facades\Auth;
      
@@ -34,7 +31,6 @@ use Illuminate\Support\Facades\Auth;
             @foreach ($cartItems as $cartItem)
                 <div style="border-style: solid; margin: 5px; text-align: center; width: 100%;">
                    <div><a class="w3-bar-item w3-button" href="/products/{{ $cartItem[0] }}"> {{ $cartItem[1] }}</a>
-                    <p>{{ $cartItem[2] }}</p>
                     <form method="get" action="{{'/cart/updateItemAmount/' . $cartItem[0] }}">
                         @csrf
                         <input type="number" name="amount" value="{{ $cartItem[2] }}" min="0">
@@ -46,8 +42,7 @@ use Illuminate\Support\Facades\Auth;
             @endforeach 
             <?php
             if (Auth::check()) {?>
-                <button id="checkoutButton" onclick="placeOrder()">Go to checkout</button>
-                <a href="/cart/removeItem/{{ $cartItem[0] }}">Go to checkout</a></div> 
+                <a href="/orders/createOrder">Go to checkout</a> 
                 <?php
             } 
             else { ?>

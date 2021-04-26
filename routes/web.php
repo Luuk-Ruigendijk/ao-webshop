@@ -45,13 +45,15 @@ Route::get('/cart/removeItem/{productId}', 'CartController@deleteItem');
 
 Route::get('/cart/updateItemAmount/{productId}', 'CartController@alterItemAmount');
 
-Route::get('/orders', 'OrderController@show');
+Route::get('/orders/{orderId}', 'OrderController@show');
+
+Route::get('/orders', 'OrderController@showAll');
+
+Route::post('/orders/createOrder', 'OrderController@create');
 
 Route::get('/cart', function () {
     return view('cart');
 });
-
-Route::get('/posts/{post}', 'PostsController@show');
 
 Auth::routes();
 
