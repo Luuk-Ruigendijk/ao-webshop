@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Order;
 
+use App\Product;
+
+use App\User;
+
 use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
@@ -31,7 +35,6 @@ class OrderController extends Controller
             'user_id' => Auth::user()->id,
             'total' => 3
         ]);
-        return view('orders', ['orders' => $orders]);
     }
 
     /**
@@ -45,21 +48,20 @@ class OrderController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-
-    }
-
     public function showAll()
     {
         $user = Auth::user();
         $orders = $user->orders;
+        //$products = Product::all()->where('categoryId', $id);
+        return view('orders', ['orders' => $orders]);
+    }
+
+    public function show()
+    {
+        $user = Auth::user();
+        $orders = $user->orders;
+        $order = Order::all()->where('id', $id);
+        //$products = Product::all()->where('categoryId', $id);
         return view('orders', ['orders' => $orders]);
     }
 

@@ -11,12 +11,9 @@ use Illuminate\Support\Facades\Auth;
                 <tr>
                     <th>total</th>
                 </tr>
-                @foreach ($orders as $order)
+                @foreach ($products as $product)
                 <tr>
-                    <td>{{ $order->total }}</td>
-                </tr>
-                <tr>
-                    <td><a href="/order/{{ $order->id }}"/>View Order</a>{{ $order->total }}</td>
+                    <td>{{ $product->name }}</td>
                 </tr>
                 @endforeach
             </table>
