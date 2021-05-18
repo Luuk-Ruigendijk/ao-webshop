@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
     else {
         $cartItems = [];
     }
+    $totalPrice = 0;
 ?>
 <?php /*
     if (Auth::check()) {
@@ -40,7 +41,10 @@ use Illuminate\Support\Facades\Auth;
                     <a href="/cart/removeItem/{{ $cartItem[0] }}">remove</a></div> 
                 </div>
             @endforeach 
+            <span>Total price: @foreach ($cartItems as $cartItem) <?php $totalPrice = ($cartItem[3] * $cartItem[2]) + $totalPrice ?> @endforeach <?php echo $totalPrice ?></span>
             <?php
+
+            $_SESSION['price'] = $totalPrice;
             if (Auth::check()) {?>
                 <a href="/orders/createOrder">Go to checkout</a> 
                 <?php

@@ -31,9 +31,11 @@ class OrderController extends Controller
      */
     public function create()
     {
+        $cartItems = $_SESSION["cart"];
+        $price = $_SESSION["price"];
         $order = Order::create([
             'user_id' => Auth::user()->id,
-            'total' => 3
+            'total' => $price
         ]);
     }
 
@@ -58,11 +60,10 @@ class OrderController extends Controller
 
     public function show()
     {
-        $user = Auth::user();
-        $orders = $user->orders;
         $order = Order::all()->where('id', $id);
+        $orderedProducts = OrderProduct::all()->where('order_id', $id);
         //$products = Product::all()->where('categoryId', $id);
-        return view('orders', ['orders' => $orders]);
+        return view('order', ['order' => $order, 'orderedProducts' => $orderedProducts]);
     }
 
     /**
