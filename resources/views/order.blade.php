@@ -11,9 +11,12 @@ use Illuminate\Support\Facades\Auth;
                 <tr>
                     <th>total</th>
                 </tr>
-                @foreach ($products as $product)
+                @foreach ($orderedProducts as $orderedProduct)
                 <tr>
-                    <td>{{ $product->name }}</td>
+                    <td>{{ $orderedProduct->product_id }}</td>
+                </tr>
+                <tr>
+                    <td>{{ $orderedProduct->amount }}</td>
                 </tr>
                 @endforeach
             </table>

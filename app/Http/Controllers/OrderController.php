@@ -8,6 +8,8 @@ use App\Order;
 
 use App\Product;
 
+use App\OrderProduct;
+
 use App\User;
 
 use Illuminate\Support\Facades\Auth;
@@ -58,7 +60,7 @@ class OrderController extends Controller
         return view('orders', ['orders' => $orders]);
     }
 
-    public function show()
+    public function show($id)
     {
         $order = Order::all()->where('id', $id);
         $orderedProducts = OrderProduct::all()->where('order_id', $id);
