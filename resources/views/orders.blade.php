@@ -22,6 +22,5 @@ use Illuminate\Support\Facades\Auth;
             </table>
         </div>
     </div>
-    {{ $order }}
     
 @endsection

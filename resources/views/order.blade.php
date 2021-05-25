@@ -5,9 +5,9 @@
 <?php //$data = $request->session()->all();
 use Illuminate\Support\Facades\Auth;
 ?>
-    <div class="rowContainer">
-        <div class="row">
-            <table width="100%">
+<div class="container">
+    
+            <table>
                 <tr>
                     <th>total</th>
                 </tr>
@@ -20,8 +20,7 @@ use Illuminate\Support\Facades\Auth;
                 </tr>
                 @endforeach
             </table>
-        </div>
-    </div>
+        
     {{ $order }}
-    
+</div>
 @endsection

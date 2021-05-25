@@ -39,6 +39,14 @@ class OrderController extends Controller
             'user_id' => Auth::user()->id,
             'total' => $price
         ]);
+        foreach ($cartItems as $cartItem) {
+            OrderProduct::create([
+                'order_id' => $order->id,
+                'product_id' => $cartItem[0],
+                'amount' => $cartItem[2]
+            ]);
+        }
+        //$order->id;
     }
 
     /**

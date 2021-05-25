@@ -49,7 +49,7 @@ Route::get('/orders', 'OrderController@showAll');
 
 Route::get('/orders/createOrder', 'OrderController@create');
 
-Route::get('/orders/{orderId}', 'OrderController@show');
+Route::get('/order/{orderId}', 'OrderController@show');
 
 Route::get('/cart', function () {
     return view('cart');
