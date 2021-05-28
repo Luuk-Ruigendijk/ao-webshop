@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Auth;
                 </tr>
                 @foreach ($orderedProducts as $orderedProduct)
                 <tr>
-                    <td>Product id: {{ $orderedProduct->product_id }}</td>
+                    <td>Product name: {{$orderedProduct->product->productName}}</td>
                 </tr>
                 <tr>
                     <td>Product amount: {{ $orderedProduct->amount }}</td>
                 </tr>
+
+
                 @endforeach
             </table>
         

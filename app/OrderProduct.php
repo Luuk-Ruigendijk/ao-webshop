@@ -9,8 +9,10 @@ class OrderProduct extends Model
 	public $timestamps = false;
 	protected $fillable = ['order_id', 'product_id', 'amount'];
 
-    public function orderProduct()
+    public function product()
     {
-    	return $this->belongsTo('App\OrderProduct');
+    	return $this->belongsTo('App\Product');
     }
+
+
 }

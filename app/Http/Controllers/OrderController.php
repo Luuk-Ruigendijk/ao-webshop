@@ -70,8 +70,9 @@ class OrderController extends Controller
 
     public function show($id)
     {
-        $order = Order::all()->where('id', $id);
+        $order = Order::find($id);
         $orderedProducts = OrderProduct::all()->where('order_id', $id);
+
         //$products = Product::all()->where('categoryId', $id);
         return view('order', ['order' => $order, 'orderedProducts' => $orderedProducts]);
     }
