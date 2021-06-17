@@ -3,7 +3,6 @@
 @section ('content')
 
 <?php //$data = $request->session()->all();
-use Illuminate\Support\Facades\Auth;
 ?>
 <div class="container">
     
@@ -23,6 +22,5 @@ use Illuminate\Support\Facades\Auth;
                 @endforeach
             </table>
         
-    {{ $order }}
 </div>
 @endsection

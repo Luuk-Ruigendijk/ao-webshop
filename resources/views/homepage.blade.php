@@ -3,7 +3,6 @@
 @section ('content')
 
 <?php //$data = $request->session()->all();
-use Illuminate\Support\Facades\Auth;
      
 if (isset($_SESSION["cart"])) {
     $cartItems = $_SESSION["cart"];
@@ -11,13 +10,6 @@ if (isset($_SESSION["cart"])) {
 }
 else {
     $cartItems = [];
-}
-
-if (Auth::check()) {
-    ?><h1>You are logged in, I think...</h1><?php
-} 
-else {
-    ?><h1>You aren't logged in, I think...</h1><?php
 }
 ?>
 

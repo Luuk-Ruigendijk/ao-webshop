@@ -12,7 +12,7 @@ use App\OrderProduct;
 
 use App\User;
 
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
 class OrderController extends Controller
 {
@@ -46,6 +46,7 @@ class OrderController extends Controller
                 'amount' => $cartItem[2]
             ]);
         }
+        
         //$order->id;
     }
 

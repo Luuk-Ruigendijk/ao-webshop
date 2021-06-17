@@ -3,7 +3,6 @@
 @section ('content')
 
 <?php //$data = $request->session()->all();
-use Illuminate\Support\Facades\Auth;
 ?>
     <div class="rowContainer">
         <div class="row">
